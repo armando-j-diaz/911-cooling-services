@@ -52,7 +52,9 @@ After saving, run `npm run build` locally or push to GitHub (Vercel rebuilds aut
 
 ---
 
-## Deploy to Vercel
+## Deploy to GitHub + custom domain
+
+**Full step-by-step:** [docs/DEPLOY-GITHUB.md](docs/DEPLOY-GITHUB.md)
 
 ### 1. Push to GitHub
 
