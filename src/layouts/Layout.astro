@@ -1,6 +1,7 @@
 ---
 import '../styles/theme.css';
 import { site } from '../data/site';
+import { basePath } from '../lib/paths';
 
 interface Props {
   title?: string;
@@ -23,9 +24,9 @@ const makeWebhookUrl = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL ?? '';
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/logo.png" />
+    <meta property="og:image" content={new URL(basePath('logo.png'), Astro.site)} />
 
-    <link rel="icon" type="image/png" href="/logo-shield.png" />
+    <link rel="icon" type="image/png" href={basePath('logo-shield.png')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

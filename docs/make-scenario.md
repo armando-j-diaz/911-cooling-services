@@ -38,7 +38,7 @@ When a visitor submits the form, the site `POST`s JSON to your Make webhook:
 3. Make will show a URL like `https://hook.us1.make.com/xxxxx`.
 4. Copy that URL into:
    - Local: `.env` as `PUBLIC_MAKE_WEBHOOK_URL=...`
-   - Vercel: Project → Settings → Environment Variables → same name.
+   - GitHub: Repo → Settings → Secrets and variables → Actions → same name.
 5. Click **OK** on the data structure dialog (first test submission will define fields).
 
 **Test the webhook:** Submit the form on your site once, or use Make’s **Run once** and send a test JSON from the webhook module.
@@ -155,7 +155,7 @@ Turn the scenario **ON** (toggle in bottom-left).
 
 | Problem | Fix |
 |---------|-----|
-| Form shows error on submit | Confirm `PUBLIC_MAKE_WEBHOOK_URL` is set in Vercel and redeployed |
+| Form shows error on submit | Confirm `PUBLIC_MAKE_WEBHOOK_URL` is set in GitHub Actions secrets and workflow re-ran |
 | Make scenario never runs | Scenario must be ON; webhook URL must match `.env` exactly |
 | Email works, HCP does not | Use error-handler alert; import from Google Sheet |
 | CORS error in browser | Make webhooks accept cross-origin POSTs by default; verify URL is the Custom Webhook, not a different module |

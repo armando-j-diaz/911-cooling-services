@@ -48,46 +48,20 @@ Edit one file: **`src/data/site.ts`**
 
 **Comfort Club** is shelved (not on site) — see `comfortClub` in `site.ts` and `docs/AGENT-HANDOFF.md`.
 
-After saving, run `npm run build` locally or push to GitHub (Vercel rebuilds automatically).
+After saving, run `npm run build` locally or push to GitHub (site rebuilds automatically).
 
 ---
 
-## Deploy to GitHub + custom domain
+## Deploy (GitHub Pages — free hosting)
 
 **Full step-by-step:** [docs/DEPLOY-GITHUB.md](docs/DEPLOY-GITHUB.md)
 
-### 1. Push to GitHub
+1. Push code to GitHub (`armando-j-diaz/911-cooling-services`)
+2. Repo **Settings → Pages → Source: GitHub Actions**
+3. Add Actions secret: `PUBLIC_MAKE_WEBHOOK_URL`
+4. Site goes live at: **https://armando-j-diaz.github.io/911-cooling-services/**
 
-```bash
-git init
-git add .
-git commit -m "Initial 911 Cooling landing page"
-git remote add origin YOUR_GITHUB_REPO_URL
-git push -u origin main
-```
-
-### 2. Import in Vercel
-
-1. Go to [vercel.com](https://vercel.com) → **Add New Project**.
-2. Import your GitHub repo.
-3. Framework preset: **Astro** (auto-detected).
-4. Add environment variable:
-   - Name: `PUBLIC_MAKE_WEBHOOK_URL`
-   - Value: your Make.com custom webhook URL
-5. Click **Deploy**.
-
-### 3. Connect your domain
-
-In Vercel → Project → **Settings** → **Domains** → add your domain (e.g. `911cooling.com`).
-
-At your domain registrar (GoDaddy, Namecheap, etc.), add DNS records Vercel shows you. Typical setup:
-
-| Type | Name | Value |
-|------|------|-------|
-| A | `@` | `76.76.21.21` |
-| CNAME | `www` | `cname.vercel-dns.com` |
-
-DNS can take up to 48 hours; often completes in under an hour. HTTPS is automatic.
+Custom domain: see the deploy doc (`PUBLIC_SITE_URL` secret + DNS).
 
 ---
 
@@ -128,5 +102,5 @@ public/logo.png      ← your logo
 
 ## Support
 
-- Form not sending? Check `PUBLIC_MAKE_WEBHOOK_URL` in Vercel and that your Make scenario is **ON**.
+- Form not sending? Check `PUBLIC_MAKE_WEBHOOK_URL` in GitHub Actions secrets and that your Make scenario is **ON**.
 - Need to change colors? See `src/styles/theme.css` and `tailwind.config.mjs`.

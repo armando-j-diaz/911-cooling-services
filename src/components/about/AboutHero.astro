@@ -1,6 +1,7 @@
 ---
 import '../../styles/about-page.css';
 import { site } from '../../data/site';
+import { basePath } from '../../lib/paths';
 
 const h = site.about.hero;
 ---
@@ -17,7 +18,7 @@ const h = site.about.hero;
           <span></span>
         </div>
         <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/90">
-          <a href="/" class="transition hover:text-white">Home</a>
+          <a href={basePath()} class="transition hover:text-white">Home</a>
           <span class="text-white/50"> / </span>
           <span>About Us</span>
         </p>

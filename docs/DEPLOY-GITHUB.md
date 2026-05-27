@@ -1,100 +1,112 @@
-# Put this site on GitHub + your custom domain
+# Host on GitHub Pages (free) + custom domain
 
-Follow these steps in order. Your code is already committed locally on branch `main`.
+Your site deploys automatically when you push to `main`. No Vercel required.
 
----
-
-## Step 1 — Create the GitHub repository
-
-1. Sign in at [github.com](https://github.com).
-2. Click **+** → **New repository**.
-3. Settings:
-   - **Repository name:** `911-cooling-website` (or any name you prefer)
-   - **Visibility:** Private or Public (your choice)
-   - **Do not** check “Add a README” — you already have one locally
-4. Click **Create repository**.
-
-GitHub will show a page with setup commands. Use **Option 1** below.
+**Live URL (until custom domain):**  
+https://armando-j-diaz.github.io/911-cooling-services/
 
 ---
 
-## Step 2 — Push your code from Terminal
+## One-time setup on GitHub
 
-Open Terminal in this project folder and run (replace `YOUR_USERNAME` and repo name if different):
+### 1. Push your code
+
+Repo: https://github.com/armando-j-diaz/911-cooling-services
 
 ```bash
 cd "/Users/armandodiaz0511345/Library/CloudStorage/OneDrive-Personal/911 Cooling/Website"
-
-git remote add origin https://github.com/YOUR_USERNAME/911-cooling-website.git
-
 git push -u origin main
 ```
 
-If GitHub asks you to sign in, use a **Personal Access Token** as the password (not your GitHub password). Create one at: GitHub → Settings → Developer settings → Personal access tokens.
+### 2. Turn on GitHub Pages
 
-**SSH instead of HTTPS:**
+1. Open the repo on GitHub → **Settings** → **Pages**
+2. Under **Build and deployment**:
+   - **Source:** GitHub Actions  
+   (not “Deploy from branch”)
+3. Save — no branch to pick when using Actions.
 
-```bash
-git remote add origin git@github.com:YOUR_USERNAME/911-cooling-website.git
-git push -u origin main
-```
+### 3. Add the Make.com webhook secret (quote form)
 
----
-
-## Step 3 — Deploy on Vercel (free, works great with Astro)
-
-1. Go to [vercel.com](https://vercel.com) and sign in with **GitHub**.
-2. **Add New…** → **Project** → import `911-cooling-website`.
-3. Vercel should detect **Astro** automatically (`vercel.json` is already in the repo).
-4. **Environment variables** — add before deploying:
+1. Repo → **Settings** → **Secrets and variables** → **Actions**
+2. **New repository secret**
    - Name: `PUBLIC_MAKE_WEBHOOK_URL`
-   - Value: your Make.com webhook URL (same as in local `.env`)
-5. Click **Deploy**.
+   - Value: your Make.com webhook URL (same as local `.env`)
 
-Every `git push` to `main` will redeploy the site automatically.
+### 4. Run the deploy
+
+1. **Actions** tab → **Deploy to GitHub Pages** → **Run workflow**  
+   Or push any commit to `main`.
+2. Wait for green checkmark (~1–2 minutes).
+3. Open **Settings → Pages** for the live link.
 
 ---
 
-## Step 4 — Connect your custom domain
+## Custom domain (your own .com)
 
-1. In Vercel: open your project → **Settings** → **Domains**.
-2. Add your domain, e.g. `yourdomain.com` and `www.yourdomain.com`.
-3. Vercel shows **DNS records** to add at your registrar (GoDaddy, Namecheap, Cloudflare, etc.).
+### 1. DNS at your registrar
 
-Typical setup:
+In GoDaddy, Namecheap, etc., add what GitHub shows under **Settings → Pages → Custom domain**. Typical:
 
 | Type | Name | Value |
 |------|------|--------|
-| A | `@` | `76.76.21.21` |
-| CNAME | `www` | `cname.vercel-dns.com` |
+| A | `@` | `185.199.108.153` (and related GitHub IPs — use all GitHub lists) |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `armando-j-diaz.github.io` |
 
-(Use the exact values Vercel shows — they can change.)
+GitHub’s UI gives the exact records when you type your domain.
 
-4. Wait for DNS to propagate (often 15–60 minutes, sometimes up to 48 hours).
-5. Vercel enables **HTTPS** automatically.
+### 2. Tell the build to use the root path
+
+Add another **Actions secret**:
+
+| Name | Example value |
+|------|----------------|
+| `PUBLIC_SITE_URL` | `https://www.yourdomain.com` |
+
+(No trailing slash. Use `https://`.)
+
+When `PUBLIC_SITE_URL` is **not** a `github.io` URL, the site builds with `base: /` so links work on your domain.
+
+### 3. Set domain in GitHub
+
+**Settings → Pages → Custom domain** → enter `www.yourdomain.com` → Save → enable **Enforce HTTPS** when offered.
 
 ---
 
-## What is not uploaded to GitHub
+## How updates work
 
-These stay on your computer only (see `.gitignore`):
+```bash
+# edit files, then:
+git add .
+git commit -m "Update copy"
+git push
+```
 
-- `.env` (webhook URL and secrets)
-- `node_modules/`
-- `dist/` (build output)
-
-Never commit `.env`. Set `PUBLIC_MAKE_WEBHOOK_URL` in Vercel instead.
+GitHub Actions rebuilds and publishes automatically.
 
 ---
 
-## Quick checklist
+## What stays off GitHub
 
-- [ ] GitHub repo created
-- [ ] `git push` succeeded
-- [ ] Vercel project connected to repo
-- [ ] `PUBLIC_MAKE_WEBHOOK_URL` set in Vercel
-- [ ] Custom domain added in Vercel + DNS at registrar
-- [ ] Test quote form on live URL
+| File | Why |
+|------|-----|
+| `.env` | Secrets — use Actions secret instead |
+| `node_modules/` | Reinstalled on each build |
+| `dist/` | Built in the cloud |
+
+---
+
+## Checklist
+
+- [ ] Code pushed to `armando-j-diaz/911-cooling-services`
+- [ ] **Pages → Source: GitHub Actions**
+- [ ] Secret `PUBLIC_MAKE_WEBHOOK_URL` added
+- [ ] Actions workflow succeeded
+- [ ] Site loads at github.io URL
+- [ ] (Optional) `PUBLIC_SITE_URL` + custom domain + DNS
 
 ---
 
@@ -102,7 +114,14 @@ Never commit `.env`. Set `PUBLIC_MAKE_WEBHOOK_URL` in Vercel instead.
 
 | Problem | Fix |
 |---------|-----|
-| `remote origin already exists` | Run `git remote set-url origin https://github.com/YOUR_USERNAME/911-cooling-website.git` |
-| Push rejected (non-fast-forward) | You created README on GitHub — use their “pull then push” instructions or delete remote README |
-| Build fails on Vercel | Check build logs; run `npm run build` locally first |
-| Form works locally, not live | Add `PUBLIC_MAKE_WEBHOOK_URL` in Vercel and redeploy |
+| 404 on github.io | Wait 2–5 min after deploy; URL must include `/911-cooling-services/` |
+| CSS/images broken | Ensure `base` in `astro.config.mjs` matches repo name |
+| Form fails on live site | Add `PUBLIC_MAKE_WEBHOOK_URL` secret; re-run Actions |
+| Custom domain shows old site | DNS can take up to 48h; check `PUBLIC_SITE_URL` secret |
+| Workflow not listed | Push `.github/workflows/deploy.yml` to `main` |
+
+---
+
+## Vercel (optional)
+
+This project no longer uses Vercel by default. `vercel.json` was removed. You can still use Vercel later if you prefer.

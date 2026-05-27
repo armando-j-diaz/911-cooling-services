@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site';
+import { basePath } from '../lib/paths';
 import WhoWeArePhotos from './WhoWeArePhotos.astro';
 
 const w = site.whoWeAre;
@@ -40,7 +41,7 @@ const w = site.whoWeAre;
               <p class="mt-1 text-sm text-white/50">{w.signatureTitle}</p>
             </div>
             <a
-              href="/about"
+              href={basePath('about')}
               class="gradient-emergency inline-flex shrink-0 items-center justify-center px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-cta transition hover:opacity-95"
             >
               More About Us

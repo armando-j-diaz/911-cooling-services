@@ -1,6 +1,7 @@
 ---
 import '../styles/hero-banner.css';
 import { site } from '../data/site';
+import { basePath } from '../lib/paths';
 
 const { hero } = site;
 const bannerImagesJson = JSON.stringify(hero.bannerImages);
@@ -57,7 +58,7 @@ const bannerImagesJson = JSON.stringify(hero.bannerImages);
           Get a Quote
         </a>
         <a
-          href="/installations"
+          href={basePath('installations')}
           class="inline-flex min-h-12 flex-1 items-center justify-center border-2 border-white/80 bg-navy-light px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-navy sm:min-h-14 sm:text-base"
         >
           See Our Work

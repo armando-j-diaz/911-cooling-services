@@ -3,7 +3,7 @@
 Use this file when continuing work in a **new chat** or with a **new agent**. It summarizes what exists, what is missing, and how the site must be built and styled.
 
 **Owner:** Armando — **Lock In** (company name; site content may still say 911 Cooling until rebrand)  
-**Workspace:** `Website/` (Astro + Tailwind, deploy target: Vercel)  
+**Workspace:** `Website/` (Astro + Tailwind, deploy target: GitHub Pages)  
 **Inspiration:** [boostmyair.com](https://boostmyair.com/) (conversion funnel), [bizzyac.com/about-us](https://bizzyac.com/about-us/) (About page layout)
 
 ---
@@ -14,7 +14,7 @@ Use this file when continuing work in a **new chat** or with a **new agent**. It
 |-------|--------|
 | Framework | **Astro 5** + **Tailwind CSS 3** |
 | Font | **Source Sans 3** (Google Fonts) |
-| Hosting | **Vercel** (GitHub-connected deploys) |
+| Hosting | **GitHub Pages** (Actions workflow in `.github/workflows/deploy.yml`) |
 | Form backend | **Make.com** custom webhook → email + Google Sheet + Housecall Pro |
 | Env var | `PUBLIC_MAKE_WEBHOOK_URL` (see `.env.example`) |
 
@@ -184,8 +184,8 @@ Update **`src/data/site.ts`** when Armando provides:
 | Google Business reviews URL | `googleBusinessUrl` |
 | Final hero offer line | `diagnosticOffer` (optional in hero now) |
 | Own team/truck photos | `public/images/hero/`, `installations/hero/`, `installations/gallery/`, `whoWeAre.photoTop/Bottom` |
-| Make.com webhook URL in Vercel | `PUBLIC_MAKE_WEBHOOK_URL` |
-| Domain DNS → Vercel | user’s registrar |
+| Make.com webhook URL in GitHub Actions secrets | `PUBLIC_MAKE_WEBHOOK_URL` |
+| Custom domain | GitHub Pages + `PUBLIC_SITE_URL` secret + registrar DNS |
 | Confirm Housecall Pro module in Make works | `docs/make-scenario.md` |
 
 ### Nice-to-have (not built)
