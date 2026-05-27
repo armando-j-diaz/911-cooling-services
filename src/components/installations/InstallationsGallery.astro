@@ -1,0 +1,42 @@
+---
+import SectionLabel from '../SectionLabel.astro';
+import { site } from '../../data/site';
+
+const { galleryImages } = site.installations;
+---
+
+<section class="section-block py-14 sm:py-20" aria-labelledby="gallery-heading">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <SectionLabel label="Project Gallery" />
+
+    <h2 id="gallery-heading" class="mt-4 text-2xl font-extrabold uppercase tracking-tight sm:text-3xl">
+      Recent AC Installations
+    </h2>
+
+    <ul class="mt-10 grid grid-cols-1 gap-4 pb-6 sm:grid-cols-2 lg:grid-cols-3 installations-gallery-grid">
+      {
+        galleryImages.map((image, index) => (
+          <>
+            <li class="group overflow-hidden border border-white/10 bg-[#1a222d]">
+              <img
+                src={image.src}
+                alt={image.alt}
+                class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                loading="lazy"
+                width={600}
+                height={450}
+              />
+            </li>
+            {index === 1 && (
+              <li
+                class="installations-gallery-sentinel col-span-full !m-0 !h-px !min-h-0 list-none overflow-hidden border-0 p-0"
+                data-installations-sentinel
+                aria-hidden="true"
+              />
+            )}
+          </>
+        ))
+      }
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+---
+import { site } from '../data/site';
+import WhoWeArePhotos from './WhoWeArePhotos.astro';
+
+const w = site.whoWeAre;
+---
+
+<section class="section-block py-14 sm:py-20" aria-labelledby="who-we-are-heading">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+      <div class="order-1 lg:order-2">
+        <div class="flex items-center gap-3">
+          <div class="section-accent-line shrink-0" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/90">{w.prehead}</p>
+        </div>
+
+        <h2
+          id="who-we-are-heading"
+          class="mt-4 text-2xl font-extrabold uppercase leading-tight tracking-tight sm:text-3xl lg:text-4xl"
+        >
+          {w.headline}
+        </h2>
+
+        <p class="mt-5 leading-relaxed text-white/85">
+          {w.bodyBefore}
+          <span class="font-semibold text-emergency-light">{w.bodyHighlight}</span>
+          {w.bodyAfter}
+        </p>
+
+        <div class="mt-8 border border-white/10 bg-white/5 p-6 sm:p-8">
+          <blockquote class="text-base italic leading-relaxed text-white/90 sm:text-lg">
+            &ldquo;{w.quote}&rdquo;
+          </blockquote>
+          <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="font-serif text-2xl text-white sm:text-3xl">{w.signature}</p>
+              <p class="mt-1 text-sm text-white/50">{w.signatureTitle}</p>
+            </div>
+            <a
+              href="/about"
+              class="gradient-emergency inline-flex shrink-0 items-center justify-center px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-cta transition hover:opacity-95"
+            >
+              More About Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-2 lg:order-1">
+        <WhoWeArePhotos />
+      </div>
+    </div>
+  </div>
+</section>

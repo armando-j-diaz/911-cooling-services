@@ -1,0 +1,34 @@
+---
+import '../../styles/hero-banner.css';
+import { site } from '../../data/site';
+
+const { hero } = site.installations;
+const bannerImagesJson = JSON.stringify(hero.bannerImages);
+---
+
+<section class="relative flex min-h-[48svh] items-center overflow-hidden text-white sm:min-h-[52svh]">
+  <div class="hero-banner" data-hero-morph data-images={bannerImagesJson}>
+    <div class="hero-slides" data-hero-slides aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="relative mx-auto w-full max-w-6xl px-4 pb-12 pt-24 sm:px-6 sm:pb-14 sm:pt-28">
+    <div class="max-w-3xl text-center md:text-left">
+      <div
+        class="mx-auto mb-4 h-0.5 w-16 bg-gradient-to-r from-emergency via-emergency-light to-ice-accent md:mx-0"
+        aria-hidden="true"
+      >
+      </div>
+
+      <h1 class="text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+        {hero.headline}
+      </h1>
+
+      <p class="mt-4 text-lg text-ice sm:mt-5 sm:text-xl">{hero.subhead}</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/hero-morph.ts';
+</script>

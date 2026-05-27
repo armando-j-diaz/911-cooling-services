@@ -1,0 +1,85 @@
+---
+import '../styles/theme.css';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = site.meta.title, description = site.meta.description } = Astro.props;
+const makeWebhookUrl = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL ?? '';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/logo.png" />
+
+    <link rel="icon" type="image/png" href="/logo-shield.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HVACBusiness',
+        name: site.name,
+        description: site.meta.description,
+        telephone: site.phoneTel,
+        areaServed: site.serviceAreas.map((area) => ({
+          '@type': 'City',
+          name: area,
+          containedInPlace: { '@type': 'State', name: 'Florida' },
+        })),
+        openingHours: 'Mo-Su 00:00-24:00',
+        priceRange: '$$',
+      })}
+    />
+  </head>
+  <body class="min-h-screen bg-[#0c1219] font-sans text-navy antialiased">
+    <slot />
+
+    <script define:vars={{ makeWebhookUrl, phoneTel: site.phoneTel }}>
+      window.__911COOLING__ = { makeWebhookUrl, phoneTel };
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+    /* Fixed header — keep #quote and other anchors below the nav */
+    scroll-padding-top: 6.75rem;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 7.5rem;
+    }
+  }
+
+  body {
+    padding-bottom: 3.75rem;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      padding-bottom: 0;
+    }
+  }
+</style>

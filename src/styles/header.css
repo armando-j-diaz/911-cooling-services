@@ -1,0 +1,90 @@
+.site-header {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.site-header.is-scrolled {
+  background: var(--color-bar-surface);
+  border-bottom-color: var(--color-bar-border);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.header-nav-link {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease;
+}
+
+.site-header:not(.is-scrolled) .header-nav-link {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.site-header:not(.is-scrolled) .header-nav-link:hover,
+.site-header:not(.is-scrolled) .header-nav-link.is-active {
+  color: #ffb81c;
+}
+
+.site-header.is-scrolled .header-nav-link {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.site-header.is-scrolled .header-nav-link:hover,
+.site-header.is-scrolled .header-nav-link.is-active {
+  color: #ffb81c;
+}
+
+.site-header:not(.is-scrolled) .nav-toggle-line {
+  background-color: #fff;
+}
+
+.site-header:not(.is-scrolled) .nav-toggle-btn {
+  border-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(15, 44, 89, 0.35);
+}
+
+.site-header.is-scrolled .nav-toggle-line {
+  background-color: #fff;
+}
+
+.site-header.is-scrolled .nav-toggle-btn {
+  border-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.site-header:not(.is-scrolled) #mobile-nav {
+  border-top-color: rgba(15, 44, 89, 0.1);
+  background: rgba(255, 255, 255, 0.97);
+}
+
+.site-header:not(.is-scrolled) #mobile-nav a {
+  color: #0f2c59;
+  border-bottom-color: #e0f2fe;
+}
+
+.site-header:not(.is-scrolled) #mobile-nav a:hover,
+.site-header:not(.is-scrolled) #mobile-nav a.text-emergency {
+  color: #f58220;
+}
+
+.site-header.is-scrolled #mobile-nav {
+  border-top-color: var(--color-bar-border);
+  background: var(--color-bar-surface);
+}
+
+.site-header.is-scrolled #mobile-nav a {
+  color: rgba(255, 255, 255, 0.92);
+  border-bottom-color: var(--color-bar-border);
+}
+
+.site-header.is-scrolled #mobile-nav a:hover,
+.site-header.is-scrolled #mobile-nav a.text-emergency {
+  color: #ffb81c;
+}

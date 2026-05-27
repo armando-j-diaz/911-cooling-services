@@ -1,0 +1,79 @@
+---
+import '../styles/hero-banner.css';
+import { site } from '../data/site';
+
+const { hero } = site;
+const bannerImagesJson = JSON.stringify(hero.bannerImages);
+---
+
+<section
+  class="relative flex min-h-[68svh] items-center overflow-hidden text-white sm:min-h-[72svh]"
+  data-scroll-cta-hero
+>
+  <div class="hero-banner" data-hero-morph data-images={bannerImagesJson}>
+    <div class="hero-slides" data-hero-slides aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="relative mx-auto w-full max-w-6xl px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-28">
+    <div class="max-w-3xl text-center md:text-left">
+      <div
+        class="mx-auto mb-4 h-0.5 w-16 bg-gradient-to-r from-emergency via-emergency-light to-ice-accent md:mx-0"
+        aria-hidden="true"
+      >
+      </div>
+
+      <h1
+        class="text-2xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl lg:text-5xl"
+      >
+        {hero.headline}
+      </h1>
+
+      <ul
+        class="mt-5 flex w-full flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6 md:justify-start md:gap-8"
+      >
+        {
+          hero.bullets.map((bullet) => (
+            <li class="flex items-center gap-2.5 sm:w-auto">
+              <span
+                class="flex h-7 w-7 shrink-0 items-center justify-center bg-emergency text-sm font-bold text-white"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+              <span class="text-sm font-bold uppercase tracking-wide">{bullet.label}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div
+        class="mx-auto mt-6 flex w-full max-w-md flex-col gap-3 md:mx-0 md:max-w-none md:flex-row"
+      >
+        <a
+          href="#quote"
+          class="gradient-emergency inline-flex min-h-12 flex-1 items-center justify-center px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-cta transition hover:opacity-95 sm:min-h-14 sm:text-base"
+        >
+          Get a Quote
+        </a>
+        <a
+          href="/installations"
+          class="inline-flex min-h-12 flex-1 items-center justify-center border-2 border-white/80 bg-navy-light px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-navy sm:min-h-14 sm:text-base"
+        >
+          See Our Work
+        </a>
+      </div>
+
+      <p class="mt-4 text-sm text-ice/90 sm:mt-5">
+        <span class="font-semibold text-white">24/7 line:</span>
+        <a href={`tel:${site.phoneTel}`} class="ml-1 font-bold text-emergency-light hover:underline">
+          {site.phone}
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/hero-morph.ts';
+</script>

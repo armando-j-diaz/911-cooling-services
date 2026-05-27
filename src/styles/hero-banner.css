@@ -1,0 +1,39 @@
+.hero-banner {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #1a365d;
+}
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.08);
+  transition:
+    opacity 3.5s ease-in-out,
+    transform 10s ease-out;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(15, 44, 89, 0.9) 0%,
+    rgba(15, 44, 89, 0.75) 40%,
+    rgba(15, 44, 89, 0.5) 100%
+  );
+}

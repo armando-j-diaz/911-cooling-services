@@ -1,0 +1,35 @@
+---
+import { site } from '../data/site';
+
+const w = site.whoWeAre;
+---
+
+<div class="relative pl-4 sm:pl-6">
+  <div
+    class="absolute left-0 top-10 z-10 flex h-28 w-2 flex-col sm:top-12 sm:h-36"
+    aria-hidden="true"
+  >
+    <span class="flex-1 bg-emergency"></span>
+    <span class="flex-1 bg-ice-accent"></span>
+    <span class="flex-1 bg-navy-light"></span>
+  </div>
+
+  <div class="relative ml-3 border-t-2 border-r-2 border-emergency pl-6 pt-6 pr-4 pb-4 sm:ml-4 sm:pl-10 sm:pt-10 sm:pr-6 sm:pb-6">
+    <img
+      src={w.photoTop}
+      alt="911 Cooling HVAC technician servicing equipment"
+      class="relative z-[1] aspect-[4/3] w-full object-cover"
+      width={600}
+      height={450}
+      loading="lazy"
+    />
+    <img
+      src={w.photoBottom}
+      alt="911 Cooling service team"
+      class="relative z-[2] -mt-12 ml-6 w-[88%] border-4 border-[#0c1219] object-cover shadow-lg sm:-mt-20 sm:ml-12 sm:w-[85%]"
+      width={500}
+      height={320}
+      loading="lazy"
+    />
+  </div>
+</div>

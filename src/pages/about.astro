@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AboutHero from '../components/about/AboutHero.astro';
+import AboutStory from '../components/about/AboutStory.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
+import AboutFaq from '../components/about/AboutFaq.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { site } from '../data/site';
+import '../styles/sections-dark.css';
+---
+
+<Layout
+  title={`About Us | ${site.name}`}
+  description={`Learn about ${site.name} — licensed South Florida HVAC, emergency AC repair, and customer-first service.`}
+>
+  <Header />
+  <main>
+    <AboutHero />
+    <div class="site-dark-band">
+      <AboutStory />
+      <AboutFaq />
+      <GoogleReviews showGoogleLink />
+      <LeadForm />
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  body {
+    padding-bottom: 0 !important;
+  }
+</style>

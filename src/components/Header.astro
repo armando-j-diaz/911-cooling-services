@@ -1,0 +1,133 @@
+---
+import '../styles/header.css';
+import { site } from '../data/site';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isHome = pathname === '/';
+const isAbout = pathname === '/about';
+const isInstallations = pathname === '/installations';
+const quoteHref = isAbout ? '#quote' : '/#quote';
+---
+
+<header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-3 py-2.5 sm:gap-4 sm:px-6 sm:py-3">
+    <a href="/" class="flex shrink-0 items-center bg-transparent" aria-label="911 Cooling home">
+      <img
+        src="/logo.png?v=2"
+        alt="911 Cooling HVAC and Emergency Services"
+        class="block h-[4.125rem] w-auto max-w-[18rem] sm:h-[4.5rem] sm:max-w-[21rem] md:h-[5.25rem] md:max-w-[27rem]"
+        width="640"
+        height="377"
+        decoding="async"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+      <a href="/" class:list={['header-nav-link', { 'is-active': isHome }]}>Home</a>
+      <a href="/installations" class:list={['header-nav-link', { 'is-active': isInstallations }]}>Our Work</a>
+      <a href="/about" class:list={['header-nav-link', { 'is-active': isAbout }]}>About Us</a>
+    </nav>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a
+        href={`tel:${site.phoneTel}`}
+        class="flex h-11 w-11 items-center justify-center bg-navy text-white transition hover:bg-navy-light sm:h-12 sm:w-12"
+        aria-label={`Call ${site.phone}`}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.716 22.5 1.5 15.284 1.5 6.75V4.5z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </a>
+
+      <a
+        href={quoteHref}
+        class="gradient-emergency inline-flex min-h-11 items-center justify-center px-3 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-cta transition hover:opacity-95 sm:px-5 sm:text-sm"
+      >
+        <span class="sm:hidden">Quote</span>
+        <span class="hidden sm:inline">Get a Quote</span>
+      </a>
+
+      <button
+        type="button"
+        id="nav-toggle"
+        class="nav-toggle-btn flex h-11 w-11 flex-col items-center justify-center gap-1.5 border sm:h-12 sm:w-12 md:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-line block h-0.5 w-5"></span>
+        <span class="nav-toggle-line block h-0.5 w-5"></span>
+        <span class="nav-toggle-line block h-0.5 w-5"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="hidden border-t md:hidden" aria-label="Mobile navigation">
+    <ul class="flex flex-col px-4 py-3 text-sm font-semibold uppercase tracking-wide text-navy">
+      <li>
+        <a
+          href="/"
+          class:list={['block border-b py-3', { 'text-emergency': isHome }]}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/installations"
+          class:list={['block border-b py-3', { 'text-emergency': isInstallations }]}
+        >
+          Our Work
+        </a>
+      </li>
+      <li>
+        <a
+          href="/about"
+          class:list={['block border-b py-3', { 'text-emergency': isAbout }]}
+        >
+          About Us
+        </a>
+      </li>
+      <li>
+        <a href={quoteHref} class="block border-b py-3">Get a Quote</a>
+      </li>
+      <li>
+        <a href={`tel:${site.phoneTel}`} class="block border-b py-3">
+          Call {site.phone}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById('site-header');
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('mobile-nav');
+
+  const updateHeader = () => {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  toggle?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (open) header?.classList.add('is-scrolled');
+  });
+
+  nav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.setAttribute('aria-label', 'Open menu');
+    });
+  });
+</script>

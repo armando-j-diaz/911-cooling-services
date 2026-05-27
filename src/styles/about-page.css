@@ -1,0 +1,56 @@
+.about-hero {
+  position: relative;
+  min-height: 28rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .about-hero {
+    min-height: 32rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-hero {
+    min-height: 36rem;
+  }
+}
+
+.about-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 18, 25, 0.94) 0%,
+    rgba(12, 18, 25, 0.82) 50%,
+    rgba(12, 18, 25, 0.65) 100%
+  );
+}
+
+.about-stand-for__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 18, 25, 0.92) 0%,
+    rgba(12, 18, 25, 0.88) 50%,
+    rgba(12, 18, 25, 0.94) 100%
+  );
+}
+
+.faq-item[open] .faq-icon-plus {
+  display: none;
+}
+
+.faq-item:not([open]) .faq-icon-minus {
+  display: none;
+}

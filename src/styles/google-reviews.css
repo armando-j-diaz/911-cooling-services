@@ -1,0 +1,120 @@
+.reviews-carousel-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.reviews-carousel-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .reviews-carousel-row {
+    gap: 0.75rem;
+  }
+}
+
+.reviews-nav {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 44, 89, 0.65);
+  color: #fff;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.reviews-nav:hover {
+  border-color: #ffb81c;
+  background: rgba(15, 44, 89, 0.9);
+  color: #ffb81c;
+}
+
+.reviews-nav:focus-visible {
+  outline: 2px solid #ffb81c;
+  outline-offset: 2px;
+}
+
+.reviews-nav:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .reviews-nav {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.reviews-carousel {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.reviews-track {
+  display: flex;
+  transition: transform 0.55s ease-in-out;
+  will-change: transform;
+}
+
+.reviews-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.125rem;
+}
+
+@media (min-width: 1024px) {
+  .reviews-slide {
+    flex: 0 0 25%;
+    min-width: 25%;
+    padding: 0 0.5rem;
+  }
+}
+
+.reviews-progress {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.reviews-progress-bar {
+  height: 100%;
+  background: #fff;
+  transition: width 0.55s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  .reviews-progress {
+    display: none;
+  }
+}
+
+.review-text.is-clamped {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+.review-text.is-expanded {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
+.review-expand-btn[hidden] {
+  display: none;
+}

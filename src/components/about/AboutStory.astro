@@ -1,0 +1,31 @@
+---
+import SectionLabel from '../SectionLabel.astro';
+import { site } from '../../data/site';
+
+const s = site.about.story;
+const p1 = s.paragraphs[0];
+const p2 = s.paragraphs[1];
+---
+
+<section class="section-block py-14 sm:py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <SectionLabel label={s.prehead} />
+
+    <h2 class="mt-4 max-w-4xl text-2xl font-extrabold uppercase leading-tight tracking-tight sm:text-3xl lg:text-4xl">
+      {s.headline}
+    </h2>
+
+    <div class="mt-8 max-w-3xl space-y-6 text-base leading-relaxed text-white/85 sm:text-lg">
+      {
+        p1 && (
+          <p>
+            {p1.before}
+            <span class="font-semibold text-emergency-light">{p1.highlight}</span>
+            {p1.after}
+          </p>
+        )
+      }
+      {p2 && <p>{p2.text}</p>}
+    </div>
+  </div>
+</section>

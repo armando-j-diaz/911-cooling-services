@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import InstallationsHero from '../components/installations/InstallationsHero.astro';
+import InstallationsGallery from '../components/installations/InstallationsGallery.astro';
+import ScrollCtaBar from '../components/ScrollCtaBar.astro';
+import { site } from '../data/site';
+import '../styles/sections-dark.css';
+---
+
+<Layout
+  title={`Our Installations | ${site.name}`}
+  description="View 911 Cooling AC installation projects across South Florida and Miami-Dade."
+>
+  <Header />
+  <main>
+    <InstallationsHero />
+    <div class="site-dark-band">
+      <InstallationsGallery />
+    </div>
+  </main>
+  <Footer />
+  <ScrollCtaBar
+    id="installations-cta-bar"
+    trigger="sentinel"
+    latch={true}
+    bodyClass="has-installations-cta"
+  />
+</Layout>
+
+<style is:global>
+  body.has-installations-cta .installations-gallery-grid {
+    padding-bottom: 5.5rem;
+  }
+
+  @media (min-width: 640px) {
+    body.has-installations-cta .installations-gallery-grid {
+      padding-bottom: 6.5rem;
+    }
+  }
+</style>

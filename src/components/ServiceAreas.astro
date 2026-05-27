@@ -1,0 +1,18 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="section-block pb-16 pt-12 sm:pb-20 sm:pt-14" aria-labelledby="areas-heading">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 id="areas-heading" class="text-center text-2xl font-extrabold uppercase tracking-tight sm:text-3xl">
+      Proudly Serving South Florida
+    </h2>
+    <p class="mx-auto mt-3 max-w-2xl text-center text-white/65">
+      Fast emergency HVAC dispatch throughout Miami-Dade and surrounding neighborhoods.
+    </p>
+
+    <p class="mt-8 text-center text-sm leading-relaxed text-white/55">
+      {site.serviceAreas.join(' · ')}
+    </p>
+  </div>
+</section>

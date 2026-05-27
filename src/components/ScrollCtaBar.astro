@@ -1,0 +1,67 @@
+---
+import '../styles/scroll-cta-bar.css';
+import { site } from '../data/site';
+
+interface Props {
+  id: string;
+  headline?: string;
+  latch?: boolean;
+  trigger: 'hero' | 'sentinel';
+  showExtraPx?: number;
+  hideOffsetPx?: number;
+  bodyClass?: string;
+}
+
+const {
+  id,
+  headline = 'Like what you see?',
+  latch = false,
+  trigger,
+  showExtraPx = 240,
+  hideOffsetPx = 48,
+  bodyClass = '',
+} = Astro.props;
+---
+
+<div
+  {id}
+  class="scroll-cta-bar"
+  data-scroll-cta
+  data-latch={latch ? 'true' : 'false'}
+  data-trigger={trigger}
+  data-show-extra={String(showExtraPx)}
+  data-hide-offset={String(hideOffsetPx)}
+  data-body-class={bodyClass}
+  role="complementary"
+  aria-label="Get in touch"
+  aria-hidden="true"
+>
+  <div class="scroll-cta-bar__inner px-4 py-4 sm:px-6 sm:py-5">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+      <p class="text-center text-base font-bold uppercase tracking-wide text-white sm:text-left sm:text-lg">
+        {headline}
+      </p>
+
+      <div class="grid grid-cols-2 gap-3 sm:shrink-0 sm:gap-4">
+        <a
+          href="/#quote"
+          class="gradient-emergency flex min-h-12 items-center justify-center px-4 text-sm font-bold uppercase tracking-wide text-white shadow-cta transition hover:opacity-95 sm:min-w-[10.5rem] sm:px-6"
+        >
+          Get a Quote
+        </a>
+        <a
+          href={`tel:${site.phoneTel}`}
+          class="flex min-h-12 items-center justify-center border-2 border-white/80 px-3 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-white/10 sm:min-w-[10.5rem] sm:px-6 sm:text-sm"
+          aria-label={`Call ${site.phone}`}
+        >
+          <span class="sm:hidden">Call</span>
+          <span class="hidden whitespace-nowrap sm:inline">Call {site.phone}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import '../scripts/scroll-cta-bar.ts';
+</script>
