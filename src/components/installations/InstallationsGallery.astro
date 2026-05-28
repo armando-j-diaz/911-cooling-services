@@ -10,10 +10,10 @@ const { galleryImages } = site.installations;
     <SectionLabel label="Project Gallery" />
 
     <h2 id="gallery-heading" class="mt-4 text-2xl font-extrabold uppercase tracking-tight sm:text-3xl">
-      Recent AC Installations
+      Before &amp; After — Our Work
     </h2>
 
-    <ul class="mt-10 grid grid-cols-1 gap-4 pb-6 sm:grid-cols-2 lg:grid-cols-3 installations-gallery-grid">
+    <ul class="mt-10 grid grid-cols-1 gap-6 pb-6 sm:grid-cols-2 installations-gallery-grid">
       {
         galleryImages.map((image, index) => (
           <>
@@ -21,7 +21,7 @@ const { galleryImages } = site.installations;
               <img
                 src={image.src}
                 alt={image.alt}
-                class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                class="aspect-[16/10] w-full object-cover object-center transition duration-300 group-hover:scale-[1.01]"
                 loading="lazy"
                 width={600}
                 height={450}

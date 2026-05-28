@@ -3,11 +3,10 @@ import '../styles/google-reviews.css';
 import { site } from '../data/site';
 
 interface Props {
-  showGoogleLink?: boolean;
   showEditNote?: boolean;
 }
 
-const { showGoogleLink = false, showEditNote = false } = Astro.props;
+const { showEditNote = false } = Astro.props;
 const r = site.reviews;
 
 function initials(name: string): string {
@@ -122,21 +121,6 @@ function initials(name: string): string {
         <div id="reviews-progress-bar" class="reviews-progress-bar" style="width: 16.67%"></div>
       </div>
     </div>
-
-    {
-      showGoogleLink && (
-        <div class="mt-8 flex justify-center">
-          <a
-            href={site.googleBusinessUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="gradient-emergency inline-flex min-h-12 w-full max-w-md items-center justify-center px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-cta transition hover:opacity-95 sm:w-auto sm:min-w-[18rem]"
-          >
-            See More Google Reviews
-          </a>
-        </div>
-      )
-    }
 
     {
       showEditNote && (

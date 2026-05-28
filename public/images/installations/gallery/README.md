@@ -1,8 +1,13 @@
-# Installations page — full gallery grid
+# Installation gallery
 
-Put **all** your installation photos here (every job you want to showcase).
+Before/after service photos (`01.png`–`05.png`):
 
-1. Add files: `01.jpg`, `02.jpg`, `03.jpg`, …
-2. Edit `installations.galleryImages` in **`src/data/site.ts`** — one entry per image with `src` and `alt` text.
+1. Ultimate Sanitation Package  
+2. Standard Repair (filter)  
+3. Enhanced Repair (evaporator coil)  
+4. Condenser Coil Cleaning  
+5. Standard Repair (outdoor condenser / compressor)  
 
-The hero slideshow uses **`../hero/`** only — not this folder.
+Hero slideshow uses `01`, `04`, and `05` — see `installations.hero.bannerImages`.
+
+Update paths in `src/data/site.ts` → `installations.galleryImages`.
