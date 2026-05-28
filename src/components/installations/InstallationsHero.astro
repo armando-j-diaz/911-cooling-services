@@ -1,5 +1,6 @@
 ---
 import '../../styles/hero-banner.css';
+import '../../styles/sections-dark.css';
 import { site } from '../../data/site';
 
 const { hero } = site.installations;
@@ -12,12 +13,11 @@ const bannerImagesJson = JSON.stringify(hero.bannerImages);
     <div class="hero-overlay"></div>
   </div>
 
-  <div class="relative mx-auto w-full max-w-6xl px-4 pb-12 pt-24 sm:px-6 sm:pb-14 sm:pt-28">
+  <div class="relative z-10 mx-auto w-full max-w-6xl px-4 pb-12 pt-24 sm:px-6 sm:pb-14 sm:pt-28">
     <div class="max-w-3xl text-center md:text-left">
-      <div
-        class="mx-auto mb-4 h-0.5 w-16 bg-gradient-to-r from-emergency via-emergency-light to-ice-accent md:mx-0"
-        aria-hidden="true"
-      >
+      <div class="section-accent-line mx-auto mb-4 shrink-0 md:mx-0" aria-hidden="true">
+        <span></span>
+        <span></span>
       </div>
 
       <h1 class="text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl lg:text-5xl">

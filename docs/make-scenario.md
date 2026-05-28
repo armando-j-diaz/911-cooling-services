@@ -12,7 +12,7 @@ When a visitor submits the form, the site `POST`s JSON to your Make webhook:
 {
   "first_name": "John",
   "last_name": "Smith",
-  "phone": "(305) 555-0100",
+  "phone": "(305) 449-9924",
   "email": "john@example.com",
   "details": "AC not cooling, unit is 12 years old",
   "source": "website",

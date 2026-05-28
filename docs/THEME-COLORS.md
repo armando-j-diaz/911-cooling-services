@@ -127,15 +127,17 @@ Until then, the **checklist + hex search** above is enough.
 
 ---
 
-## Current palette snapshot (change when brand is locked)
+## Current palette snapshot (911 poster / logo brand)
 
 ```
-CTA gradient:  #F58220 → #FFB81C
-Navy:          #0F2C59  (light: #1A365D)
-Ice:           #E0F2FE  (accent: #A5F3FC)
-Dark band:     #0C1219
-Card on dark:  #1A222D
-Bar surface:   rgba(12, 18, 25, 0.97)
+CTA gradient:  #E31E24 → #FF4D4D  (heat red)
+Navy:          #0A0F18  (light: #141C2E)
+Ice / cool:    #DBEAFE  (accent: #38BDF8)
+Silver text:   #C8CDD3  (light: #E8EAED)
+Dark band:     #05080E
+Card on dark:  #121820
+Bar surface:   rgba(5, 8, 14, 0.97)
+Section line:  red + blue (#E31E24 / #2563EB)
 ```
 
 ---

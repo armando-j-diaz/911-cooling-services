@@ -21,6 +21,7 @@
 .about-hero__bg {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background-size: cover;
   background-position: center;
 }
@@ -28,12 +29,9 @@
 .about-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(12, 18, 25, 0.94) 0%,
-    rgba(12, 18, 25, 0.82) 50%,
-    rgba(12, 18, 25, 0.65) 100%
-  );
+  z-index: 1;
+  pointer-events: none;
+  background: rgba(5, 8, 14, 0.68);
 }
 
 .about-stand-for__overlay {
@@ -41,9 +39,9 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(12, 18, 25, 0.92) 0%,
-    rgba(12, 18, 25, 0.88) 50%,
-    rgba(12, 18, 25, 0.94) 100%
+    rgba(5, 8, 14, 0.92) 0%,
+    rgba(10, 15, 24, 0.88) 50%,
+    rgba(5, 8, 14, 0.94) 100%
   );
 }
 

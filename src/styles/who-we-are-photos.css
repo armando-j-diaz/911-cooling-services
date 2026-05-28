@@ -1,0 +1,26 @@
+/* Brand accent stripe — heat red, ice blue, cool blue (matches section-accent-line) */
+.who-we-are-accent-bar span:nth-child(1) {
+  background: #e31e24;
+}
+
+.who-we-are-accent-bar span:nth-child(2) {
+  background: #38bdf8;
+}
+
+.who-we-are-accent-bar span:nth-child(3) {
+  background: #2563eb;
+}
+
+.who-we-are-frame {
+  border-top-color: #e31e24;
+  border-right-color: #38bdf8;
+}
+
+.who-we-are-photo-secondary {
+  position: relative;
+  z-index: 2;
+  border-color: #141c2e;
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(56, 189, 248, 0.15);
+}

@@ -1,16 +1,15 @@
 /* Single dark surface for all main content sections — avoids abrupt band seams */
 .site-dark-band {
-  --band-bg: #0c1219;
+  --band-bg: #05080e;
   background-color: var(--band-bg);
   background-image:
-    radial-gradient(ellipse at 15% 0%, rgba(245, 130, 32, 0.07) 0%, transparent 42%),
-    radial-gradient(ellipse at 85% 35%, rgba(165, 243, 252, 0.05) 0%, transparent 40%),
-    radial-gradient(ellipse at 50% 100%, rgba(15, 44, 89, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 12% 0%, rgba(227, 30, 36, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 88% 30%, rgba(56, 189, 248, 0.08) 0%, transparent 42%),
+    radial-gradient(ellipse at 50% 100%, rgba(10, 15, 24, 0.9) 0%, transparent 55%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
   background-attachment: scroll;
 }
 
-/* Section blocks sit on the band — no separate backgrounds */
 .section-block {
   position: relative;
   color: #fff;
@@ -24,10 +23,10 @@
 
 .section-accent-line span:first-child {
   flex: 1;
-  background: #f58220;
+  background: #e31e24;
 }
 
 .section-accent-line span:last-child {
   flex: 1;
-  background: #1a365d;
+  background: #2563eb;
 }

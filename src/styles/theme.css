@@ -1,15 +1,19 @@
 :root {
-  --color-emergency-start: #f58220;
-  --color-emergency-end: #ffb81c;
-  --color-navy: #0f2c59;
-  --color-navy-light: #1a365d;
-  --color-ice: #e0f2fe;
-  --color-ice-accent: #a5f3fc;
+  /* 911 logo — heat red */
+  --color-emergency-start: #e31e24;
+  --color-emergency-end: #ff4d4d;
+  /* Deep black-navy surfaces */
+  --color-navy: #0a0f18;
+  --color-navy-light: #141c2e;
+  /* Cool / ice accents (snowflake blue from brand) */
+  --color-ice: #dbeafe;
+  --color-ice-accent: #38bdf8;
+  --color-silver: #c8cdd3;
   --color-white: #ffffff;
-  --color-gray-50: #f8fafc;
-  --color-gray-100: #f1f5f9;
-  --color-bar-surface: rgba(12, 18, 25, 0.97);
-  --color-bar-border: rgba(255, 255, 255, 0.12);
+  --color-gray-50: #f4f4f5;
+  --color-gray-100: #e4e4e7;
+  --color-bar-surface: rgba(5, 8, 14, 0.97);
+  --color-bar-border: rgba(255, 255, 255, 0.1);
   --font-sans: 'Montserrat', system-ui, sans-serif;
 }
 
@@ -22,4 +26,36 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Semantic accents — reliable on dark bands (not dependent on Tailwind color nesting) */
+.text-phone {
+  color: var(--color-emergency-end);
+}
+
+.text-phone:hover {
+  color: #fff;
+}
+
+.text-highlight {
+  color: var(--color-ice-accent);
+}
+
+.header-phone-btn {
+  background: linear-gradient(180deg, var(--color-emergency-start) 0%, var(--color-emergency-end) 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(227, 30, 36, 0.5);
+  transition: opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-phone-btn:hover {
+  opacity: 0.95;
+  box-shadow: 0 4px 22px rgba(227, 30, 36, 0.65);
+}
+
+.hero-check-badge {
+  background: linear-gradient(180deg, var(--color-emergency-start) 0%, var(--color-emergency-end) 100%);
+  color: #fff;
+  box-shadow: 0 0 14px rgba(227, 30, 36, 0.45);
+  border: 1px solid rgba(56, 189, 248, 0.35);
 }

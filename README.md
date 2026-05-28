@@ -35,8 +35,8 @@ Edit one file: **`src/data/site.ts`**
 
 | Field | What to change |
 |-------|----------------|
-| `phone` | Display number, e.g. `(305) 555-0911` |
-| `phoneTel` | Dial format for links, e.g. `+13055550911` |
+| `phone` | Display number, e.g. `(305) 449-9924` |
+| `phoneTel` | Dial format for links, e.g. `+13054499924` |
 | `license` | Your FL HVAC license line |
 | `diagnosticOffer` | Hero offer text |
 | `hero.headline` / `hero.subhead` | Main headline |

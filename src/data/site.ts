@@ -5,8 +5,8 @@
 export const site = {
   name: '911 Cooling',
   tagline: 'HVAC & Emergency Services',
-  phone: '(305) 555-0911',
-  phoneTel: '+13055550911',
+  phone: '(305) 449-9924',
+  phoneTel: '+13054499924',
   email: 'service@911cooling.com',
   license: 'Licensed & Insured — FL HVAC # pending',
   /** Your Google Business Profile reviews URL — update when ready */
@@ -35,6 +35,13 @@ export const site = {
       'It’s not just about fixing problems; it’s about building trust and giving you peace of mind that your home is in good hands. Our commitment is your comfort and satisfaction, 24/7.',
     signature: 'The 911 Cooling Team',
     signatureTitle: 'HVAC & Emergency Services',
+    /** Rotates in Who We Are — same overlay as homepage hero */
+    slideshowImages: [
+      '/images/hero/01.png',
+      '/images/hero/02.png',
+      '/images/hero/03.png',
+      '/images/hero/04.png',
+    ],
     photoTop: '/images/hero/01.png',
     photoBottom: '/images/hero/02.png',
   },

@@ -24,7 +24,7 @@
   width: 2.75rem;
   height: 2.75rem;
   border: 2px solid rgba(255, 255, 255, 0.35);
-  background: rgba(15, 44, 89, 0.65);
+  background: rgba(10, 15, 24, 0.85);
   color: #fff;
   cursor: pointer;
   transition:
@@ -34,13 +34,13 @@
 }
 
 .reviews-nav:hover {
-  border-color: #ffb81c;
-  background: rgba(15, 44, 89, 0.9);
-  color: #ffb81c;
+  border-color: #e31e24;
+  background: rgba(10, 15, 24, 0.95);
+  color: #ff6b6b;
 }
 
 .reviews-nav:focus-visible {
-  outline: 2px solid #ffb81c;
+  outline: 2px solid #38bdf8;
   outline-offset: 2px;
 }
 
