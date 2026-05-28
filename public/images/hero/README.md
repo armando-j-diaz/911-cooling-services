@@ -1,18 +1,10 @@
-# Hero background photos
+# Homepage hero slideshow
 
-One full-width image shows at a time and **slowly fades** to the next (like Boost Air’s homepage).
+Marketing banners (`01.png`–`04.png`), 16:9 — rotate on the home page hero.
 
-## Add your photos
+1. Daytime van & technician  
+2. Storm / lightning scene  
+3. Dusk van & home  
+4. Emergency helicopter response  
 
-| File | Notes |
-|------|--------|
-| `01.png` | Slide 1 |
-| `02.png` | Slide 2 |
-| `03.png` | Slide 3 |
-| `04.png` | Slide 4 (add more in `src/data/site.ts`) |
-
-Use landscape photos, at least **1600px wide**. Team, trucks, or job sites work best. Keep each file under ~500 KB when possible.
-
-Different names? Update the list in **`src/data/site.ts`** → `hero.bannerImages`.
-
-Sample slides are installed. Replace these files with your own team/job photos when ready.
+Listed in `src/data/site.ts` → `hero.bannerImages`.

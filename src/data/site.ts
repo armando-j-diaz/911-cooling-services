@@ -35,15 +35,14 @@ export const site = {
       'It’s not just about fixing problems; it’s about building trust and giving you peace of mind that your home is in good hands. Our commitment is your comfort and satisfaction, 24/7.',
     signature: 'The 911 Cooling Team',
     signatureTitle: 'HVAC & Emergency Services',
-    /** Rotates in Who We Are — same overlay as homepage hero */
+    /** Rotates in Who We Are — before/after work photos (not homepage promo banners) */
     slideshowImages: [
-      '/images/hero/01.png',
-      '/images/hero/02.png',
-      '/images/hero/03.png',
-      '/images/hero/04.png',
+      '/images/installations/gallery/01.png',
+      '/images/installations/gallery/05.png',
+      '/images/installations/gallery/04.png',
     ],
-    photoTop: '/images/hero/01.png',
-    photoBottom: '/images/hero/02.png',
+    photoTop: '/images/installations/gallery/01.png',
+    photoBottom: '/images/installations/gallery/05.png',
   },
   reviews: {
     prehead: 'Real Stories. Real Comfort.',
@@ -181,19 +180,33 @@ export const site = {
       subhead: 'Check out our showcase of AC Installations!',
       /** Best/cleanest shots only — public/images/installations/hero/ */
       bannerImages: [
+        '/images/installations/hero/05.png',
         '/images/installations/hero/01.png',
-        '/images/installations/hero/02.png',
-        '/images/installations/hero/03.png',
+        '/images/installations/hero/04.png',
       ],
     },
     /** Full gallery grid — public/images/installations/gallery/ */
     galleryImages: [
-      { src: '/images/installations/gallery/01.png', alt: 'AC installation — outdoor condenser unit' },
-      { src: '/images/installations/gallery/02.png', alt: 'HVAC technician servicing rooftop unit' },
-      { src: '/images/installations/gallery/03.png', alt: 'AC system maintenance and repair' },
-      { src: '/images/installations/gallery/04.png', alt: 'Residential cooling installation' },
-      { src: '/images/installations/gallery/05.png', alt: 'Commercial HVAC installation work' },
-      { src: '/images/installations/gallery/06.png', alt: 'New AC unit installation South Florida' },
+      {
+        src: '/images/installations/gallery/01.png',
+        alt: 'Before and after — Ultimate Sanitation Package HVAC cleaning',
+      },
+      {
+        src: '/images/installations/gallery/02.png',
+        alt: 'Before and after — standard repair with new air filter installation',
+      },
+      {
+        src: '/images/installations/gallery/03.png',
+        alt: 'Before and after — enhanced repair evaporator coil cleaning',
+      },
+      {
+        src: '/images/installations/gallery/04.png',
+        alt: 'Before and after — outdoor condenser coil cleaning',
+      },
+      {
+        src: '/images/installations/gallery/05.png',
+        alt: 'Before and after — standard repair outdoor condenser with new compressor',
+      },
     ],
   },
   /** SHELVED — Comfort Club ($19/mo) removed from site; may return later. See docs/AGENT-HANDOFF.md */
