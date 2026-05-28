@@ -58,17 +58,25 @@ In GoDaddy, Namecheap, etc., add what GitHub shows under **Settings → Pages �
 
 GitHub’s UI gives the exact records when you type your domain.
 
-### 2. Tell the build to use the root path
+### 2. Fix styling on your custom domain (required)
 
-Add another **Actions secret**:
+If the site looks like plain HTML with no colors/layout, the build used the wrong path.
+
+**Do both:**
+
+**A)** Create `public/CNAME` (one line, your domain exactly as in GitHub Pages):
+
+```text
+www.yourdomain.com
+```
+
+**B)** Add an **Actions secret** (optional but recommended):
 
 | Name | Example value |
 |------|----------------|
 | `PUBLIC_SITE_URL` | `https://www.yourdomain.com` |
 
-(No trailing slash. Use `https://`.)
-
-When `PUBLIC_SITE_URL` is **not** a `github.io` URL, the site builds with `base: /` so links work on your domain.
+Commit, push, and wait for **Deploy to GitHub Pages** to finish. CSS and images will load at your domain root.
 
 ### 3. Set domain in GitHub
 
@@ -115,7 +123,8 @@ GitHub Actions rebuilds and publishes automatically.
 | Problem | Fix |
 |---------|-----|
 | 404 on github.io | Wait 2–5 min after deploy; URL must include `/911-cooling-services/` |
-| CSS/images broken | Ensure `base` in `astro.config.mjs` matches repo name |
+| Site looks unstyled (plain HTML) | Custom domain needs `public/CNAME` + redeploy; see custom domain section |
+| CSS/images broken on github.io | Use full URL `...github.io/911-cooling-services/` |
 | Form fails on live site | Add `PUBLIC_MAKE_WEBHOOK_URL` secret; re-run Actions |
 | Custom domain shows old site | DNS can take up to 48h; check `PUBLIC_SITE_URL` secret |
 | Workflow not listed | Push `.github/workflows/deploy.yml` to `main` |

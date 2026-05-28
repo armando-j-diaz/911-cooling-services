@@ -1,0 +1,7 @@
+# Rename this file to CNAME (no extension) and put your real domain on one line.
+# Example: www.911cooling.com
+#
+# Then commit and push — the next GitHub Actions build will load CSS correctly
+# on your custom domain.
+
+www.yourdomain.com
