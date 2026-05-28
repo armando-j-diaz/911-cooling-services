@@ -65,12 +65,18 @@ const makeWebhookUrl = import.meta.env.PUBLIC_MAKE_WEBHOOK_URL ?? '';
   html {
     scroll-behavior: smooth;
     /* Fixed header — keep #quote and other anchors below the nav */
-    scroll-padding-top: 6.75rem;
+    scroll-padding-top: 8.5rem;
   }
 
   @media (min-width: 640px) {
     html {
-      scroll-padding-top: 7.5rem;
+      scroll-padding-top: 9.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 11.5rem;
     }
   }
 

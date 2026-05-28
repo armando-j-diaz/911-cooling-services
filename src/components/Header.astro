@@ -12,12 +12,11 @@ const quoteHref = isAbout ? '#quote' : basePath('#quote');
 ---
 
 <header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50">
-  <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-3 py-2.5 sm:gap-4 sm:px-6 sm:py-3">
-    <a href={basePath()} class="flex shrink-0 items-center bg-transparent" aria-label="911 Cooling home">
+  <div class="site-header__inner flex items-center justify-between gap-2 sm:gap-4">
+    <a href={basePath()} class="site-header__logo bg-transparent" aria-label="911 Cooling home">
       <img
-        src={basePath('logo.png?v=3')}
+        src={basePath('logo.png?v=4')}
         alt="911 Cooling — Air Conditioning"
-        class="block h-14 w-auto max-w-[12.5rem] sm:h-16 sm:max-w-[14.5rem] md:h-[4.75rem] md:max-w-[17rem]"
         width="1024"
         height="1024"
         decoding="async"
@@ -30,7 +29,7 @@ const quoteHref = isAbout ? '#quote' : basePath('#quote');
       <a href={basePath('about')} class:list={['header-nav-link', { 'is-active': isAbout }]}>About Us</a>
     </nav>
 
-    <div class="flex items-center gap-2 sm:gap-3">
+    <div class="site-header__actions">
       <a
         href={`tel:${site.phoneTel}`}
         class="header-phone-btn flex h-11 w-11 items-center justify-center sm:h-12 sm:w-12"
@@ -68,7 +67,7 @@ const quoteHref = isAbout ? '#quote' : basePath('#quote');
   </div>
 
   <nav id="mobile-nav" class="hidden border-t md:hidden" aria-label="Mobile navigation">
-    <ul class="flex flex-col px-4 py-3 text-sm font-semibold uppercase tracking-wide text-navy">
+    <ul class="flex flex-col px-4 py-3 text-sm font-semibold uppercase tracking-wide text-navy sm:px-6">
       <li>
         <a
           href={basePath()}
