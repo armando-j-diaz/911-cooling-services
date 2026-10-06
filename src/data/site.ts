@@ -4,11 +4,13 @@
  */
 export const site = {
   name: '911 Cooling',
+  /** Legal entity — footer only. Do not use this name elsewhere on the site. */
+  legalName: 'J.E.T MOBILE ENGINEERING SERVICES LLC',
   tagline: 'HVAC & Emergency Services',
   phone: '(305) 449-9924',
   phoneTel: '+13054499924',
   email: 'service@911cooling.com',
-  license: 'Licensed & Insured — FL HVAC # pending',
+  license: 'Licensed & Insured — FL CAC #CAC1825279',
   /** Your Google Business Profile reviews URL — update when ready */
   googleBusinessUrl: 'https://www.google.com/maps',
   diagnosticOffer: 'Diagnostic fee waived with any same-day repair',
@@ -61,7 +63,7 @@ export const site = {
       {
         name: 'Robert D.',
         time: 'Verified customer',
-        text: "JET MOBILE ENGINEERING RUNS ALL OF MY HVAC CALLS...I won't let anyone else come out other than JET MOBILE ENGINEERING.",
+        text: "911 COOLING RUNS ALL OF MY HVAC CALLS...I won't let anyone else come out other than 911 COOLING.",
       },
       {
         name: 'Gabriel R.',
@@ -71,7 +73,7 @@ export const site = {
       {
         name: 'Prosperi H.',
         time: 'Verified customer',
-        text: 'I want to thank and commend Xavier and Rick from J.E.T Mobile Service A/C for their professionalism, prompt response, and kindness. From the very first call, Rick was courteous and made sure to understand the issue clearly. In no time, Xavier arrived and resolved everything quickly and efficiently, also in Spanish — great! The attention to detail was outstanding, the response time was fast, and both of them were respectful and friendly throughout. You can tell they truly care about their customers and take pride in doing excellent work. I highly recommend Jet Service A/C. Reliable, efficient, and top-notch service!',
+        text: 'I want to thank and commend Xavier and Rick from 911 Cooling for their professionalism, prompt response, and kindness. From the very first call, Rick was courteous and made sure to understand the issue clearly. In no time, Xavier arrived and resolved everything quickly and efficiently, also in Spanish — great! The attention to detail was outstanding, the response time was fast, and both of them were respectful and friendly throughout. You can tell they truly care about their customers and take pride in doing excellent work. I highly recommend 911 Cooling. Reliable, efficient, and top-notch service!',
       },
       {
         name: 'Carmen B.',
@@ -86,12 +88,12 @@ export const site = {
       {
         name: 'Scott D.',
         time: 'Verified customer',
-        text: 'Professional and prompt service from Javier, one of the Owners and the best TECH AT JET Mobile Engineering. Always happy with JET MOBILE ENGINEERING and they are the only AHS Service Provider that I will let service my 24 Contracts with AHS. Thanks Javier and JET Mobile engineering.',
+        text: 'Professional and prompt service from Javier, one of the Owners and the best TECH AT 911 Cooling. Always happy with 911 Cooling and they are the only AHS Service Provider that I will let service my 24 Contracts with AHS. Thanks Javier and 911 Cooling.',
       },
       {
         name: 'Jorge P.',
         time: 'Verified customer',
-        text: "J.E.T.'s technician Yosbel arrived on schedule; he promptly checked the A/C unit inside and the compressor outside. He found the issue, replaced a part and fixed it quickly: I HAVE A/C again THANKS.",
+        text: "911 Cooling's technician Yosbel arrived on schedule; he promptly checked the A/C unit inside and the compressor outside. He found the issue, replaced a part and fixed it quickly: I HAVE A/C again THANKS.",
       },
       {
         name: 'Chris S.',
